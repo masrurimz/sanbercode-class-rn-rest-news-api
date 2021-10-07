@@ -1,0 +1,45 @@
+{
+	"name": "vidly-backend",
+	"version": "1.0.0",
+	"description": "Backend for online video rent system",
+	"main": "index.js",
+	"jest": {
+		"verbose": true,
+		"testEnvironment": "node"
+	},
+	"scripts": {
+		"test": "jest --watchAll --verbose --detectOpenHandles --coverage",
+		"start": "node index.js"
+	},
+	"engines": {
+		"node": "14.18.0"
+	},
+	"author": "Muhammad Zahid Masruri",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/masruri3/vidly-backend.git"
+	},
+	"dependencies": {
+		"bcrypt": "^5.0.0",
+		"compression": "^1.7.4",
+		"config": "^3.3.3",
+		"express": "^4.17.1",
+		"express-async-errors": "^3.1.1",
+		"helmet": "^4.2.0",
+		"joi": "^17.3.0",
+		"joi-objectid": "^4.0.2",
+		"jsonwebtoken": "^8.5.1",
+		"lodash": "^4.17.20",
+		"moment": "^2.29.1",
+		"mongoose": "^6.0.9",
+		"winston": "^3.3.3",
+		"winston-mongodb": "^5.0.5"
+	},
+	"devDependencies": {
+		"@types/jest": "^27.0.2",
+		"jest": "^27.2.4",
+		"nodemon": "^2.0.6",
+		"supertest": "^6.0.1"
+	}
+}

@@ -1,0 +1,6 @@
+node_modules/
+.env
+# config/
+logfile.log
+uncaughtExceptions.log
+coverage/
