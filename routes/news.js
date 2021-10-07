@@ -5,7 +5,7 @@ const { News, validate } = require("../models/news");
 
 router.get("/", async (req, res) => {
 	const news = await News.find();
-	res.send(news);
+	res.send({ data: news });
 });
 
 router.post("/", async (req, res) => {
@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
 	});
 	await news.save();
 
-	res.send(news);
+	res.send({ data: news });
 });
 
 router.put("/:id", async (req, res) => {
@@ -40,7 +40,7 @@ router.put("/:id", async (req, res) => {
 			.status(404)
 			.send("The news with the given ID could not be found");
 
-	res.send(news);
+	res.send({ data: news });
 });
 
 router.delete("/:id", async (req, res) => {
@@ -51,7 +51,7 @@ router.delete("/:id", async (req, res) => {
 			.status(404)
 			.send("The news with the given ID could not be found");
 
-	res.send(news);
+	res.send({ data: news });
 });
 
 module.exports = router;
