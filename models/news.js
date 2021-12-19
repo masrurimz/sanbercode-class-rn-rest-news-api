@@ -9,22 +9,22 @@ const News = mongoose.model(
 			type: String,
 			required: true,
 			trim: true,
-			minlength: 5,
+			minlength: 3,
 			maxlength: 255,
 		},
 		value: {
 			type: String,
 			required: true,
 			trim: true,
-			minlength: 5,
+			minlength: 3,
 			maxlength: 255,
 		},
 	}),
 );
 
 const schema = Joi.object({
-	title: Joi.string().min(5).max(255).required(),
-	value: Joi.string().min(5).max(255).required(),
+	title: Joi.string().min(3).max(255).required(),
+	value: Joi.string().min(3).max(255).required(),
 });
 
 function validateValue(movie) {
