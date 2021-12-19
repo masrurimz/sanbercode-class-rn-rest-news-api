@@ -1,7 +1,16 @@
+const { error: errorMessage } = require("../models/responseApi");
+
 module.exports = (validator) => {
-  return (req, res, next) => {
-    const { error } = validator(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
-    next();
-  };
+	return (req, res, next) => {
+		const { error } = validator(req.body);
+		if (error)
+			return res.status(400).send(
+				errorMessage({
+					message: error.details[0].message,
+					statusCode: res.statusCode,
+					results: {},
+				}),
+			);
+		next();
+	};
 };
