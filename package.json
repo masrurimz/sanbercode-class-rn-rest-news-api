@@ -12,7 +12,7 @@
 		"start": "node index.js"
 	},
 	"engines": {
-		"node": "14.18.0"
+		"node": "16.10.0"
 	},
 	"author": "Muhammad Zahid Masruri",
 	"license": "MIT",
