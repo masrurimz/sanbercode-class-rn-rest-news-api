@@ -11,7 +11,7 @@
  * @param   {object | array} results
  * @param   {number} statusCode
  */
-exports.success = ({ message, results, statusCode }) => {
+exports.success = ({ message = "OK", results, statusCode = 200 }) => {
 	return {
 		message,
 		error: false,
