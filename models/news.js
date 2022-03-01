@@ -27,8 +27,8 @@ const schema = Joi.object({
 	value: Joi.string().min(3).max(255).required(),
 });
 
-function validateValue(movie) {
-	return schema.validate(movie);
+function validateValue(news) {
+	return schema.validate(news);
 }
 
 exports.News = News;
