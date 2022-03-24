@@ -7,6 +7,7 @@ const {
 } = require("../models/responseApi");
 const router = express.Router();
 
+const auth = require("../middleware/auth");
 const validateObjectId = require("../middleware/validateObjectId");
 const validate = require("../middleware/validate");
 
@@ -45,7 +46,7 @@ router.post("/", [validate(validateNews)], async (req, res) => {
 
 router.put(
 	"/:id",
-	[validate(validateNews), validateObjectId],
+	[auth, validate(validateNews), validateObjectId],
 	async (req, res) => {
 		const news = await News.findByIdAndUpdate(
 			req.params.id,
@@ -79,7 +80,7 @@ router.put(
 	},
 );
 
-router.delete("/:id", [validateObjectId], async (req, res) => {
+router.delete("/:id", [auth, validateObjectId], async (req, res) => {
 	const news = await News.findByIdAndRemove(req.params.id);
 
 	if (!news)
