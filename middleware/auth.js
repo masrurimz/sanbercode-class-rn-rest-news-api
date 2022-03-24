@@ -22,10 +22,10 @@ module.exports = function auth(req, res, next) {
 		req.user = decoded;
 		next();
 	} catch (ex) {
-		res.status(400).send(
+		res.status(401).send(
 			error({
-				message: "Invalid token.",
-				statusCode: 400,
+				message: "Access denied. Invalid token.",
+				statusCode: 401,
 			}),
 		);
 	}
